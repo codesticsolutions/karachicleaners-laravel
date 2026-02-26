@@ -293,179 +293,116 @@
     <!-- About One End -->
 
     <!-- Services One Start -->
-    <section class="services-one">
-        <div class="services-one__shape-bg" style="background-image: url(assets/images/shapes/services-one-shape-bg.png);">
-        </div>
-        <div class="services-one__shape-1"></div>
-        <div class="services-one__shape-2"></div>
-        <div class="services-one__shape-3 float-bob-x">
-            <img src="assets/images/shapes/services-one-shape-3.png" alt="">
-        </div>
-        <div class="services-one__shape-4 float-bob-y">
-            <img src="assets/images/shapes/services-one-shape-4.png" alt="">
-        </div>
-        <div class="container">
-            <div class="services-one__top">
-                <div class="row">
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="services-one__top-left">
-                            <div class="section-title text-left sec-title-animation animation-style2">
-                                <div class="section-title__tagline-box">
-                                    <div class="section-title__tagline-shape-box">
-                                        <div class="section-title__tagline-shape"></div>
-                                        <div class="section-title__tagline-shape-2"></div>
-                                    </div>
-                                    <span class="section-title__tagline">Services</span>
+<section class="services-one">
+    <div class="services-one__shape-bg" style="background-image: url(assets/images/shapes/services-one-shape-bg.png);">
+    </div>
+    <div class="services-one__shape-1"></div>
+    <div class="services-one__shape-2"></div>
+    <div class="services-one__shape-3 float-bob-x">
+        <img src="assets/images/shapes/services-one-shape-3.png" alt="">
+    </div>
+    <div class="services-one__shape-4 float-bob-y">
+        <img src="assets/images/shapes/services-one-shape-4.png" alt="">
+    </div>
+    <div class="container">
+        <div class="services-one__top">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="services-one__top-left">
+                        <div class="section-title text-left sec-title-animation animation-style2">
+                            <div class="section-title__tagline-box">
+                                <div class="section-title__tagline-shape-box">
+                                    <div class="section-title__tagline-shape"></div>
+                                    <div class="section-title__tagline-shape-2"></div>
                                 </div>
-                                <h2 class="section-title__title title-animation">Spotless Homes, Healthy Living
-                                    <span>Karachi Cleaner's Promise!</span>
-                                </h2>
+                                <span class="section-title__tagline">Professional Cleaning Services Karachi</span>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-6 col-lg-6">
-                        <div class="services-one__top-right">
-                            <p class="services-one__top-text">At Karachi Cleaner, we deliver premium cleaning<br>
-                                services designed for homes and offices across<br>Karachi with reliability and care.
-                            </p>
+                            <h2 class="section-title__title title-animation">
+                                Expert Sofa, Carpet & Home Cleaning 
+                                <span>in Karachi – Spotless Results!</span>
+                            </h2>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="services-one__bottom">
-                <div class="row">
-                    <div class="col-xl-5">
-                        <div class="services-one__left wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
-                            <div class="services-one__img-box">
-                                <div class="services-one__img-shape-1"></div>
-                                <div class="services-one__img">
-                                    <img src="assets/images/services/services-one-img-1.jpg" alt="">
-                                </div>
-                                <div class="services-one__img-2">
-                                    <img src="assets/images/services/services-one-img-2.jpg" alt="">
-                                </div>
-                                <div class="services-one__experience-box">
-                                    <div class="services-one__experience-icon">
-                                        <span class="icon-trophy"></span>
-                                    </div>
-                                    <div class="services-one__experience-content">
-                                        <p><span class="odometer" data-count="15">00</span> <span>+ Years</span>
-                                            <br> of Professional
-                                            Cleaning Excellence
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-7">
-                        <div class="services-one__right">
-                            <ul class="services-one__services-list list-unstyled">
-                                <li>
-                                    <div class="services-one__services-single">
-                                        <div class="services-one__count-and-content">
-                                            <div class="services-one__count"></div>
-                                            <div class="services-one__content">
-                                                <h3 class="services-one__title"><a
-                                                        href="residential-cleaning.html">Residential Cleaning</a>
-                                                </h3>
-                                                <p class="services-one__text">Professional cleaning for homes
-                                                    with<br>eco-friendly products and trained staff</p>
-                                            </div>
-                                        </div>
-                                        <div class="services-one__arrow">
-                                            <a href="residential-cleaning.html"><span
-                                                    class="icon-diagonal-arrow"></span></a>
-                                        </div>
-                                    </div>
-                                    <div class="services-one__hover-img">
-                                        <img src="assets/images/services/services-1-1.jpg" alt="Image">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="services-one__services-single">
-                                        <div class="services-one__count-and-content">
-                                            <div class="services-one__count"></div>
-                                            <div class="services-one__content">
-                                                <h3 class="services-one__title"><a
-                                                        href="commercial-cleaning.html">Commercial Cleaning</a></h3>
-                                                <p class="services-one__text">Pristine offices and commercial
-                                                    spaces<br>tailored to your business needs</p>
-                                            </div>
-                                        </div>
-                                        <div class="services-one__arrow">
-                                            <a href="commercial-cleaning.html"><span class="icon-diagonal-arrow"></span></a>
-                                        </div>
-                                    </div>
-                                    <div class="services-one__hover-img">
-                                        <img src="assets/images/services/services-1-2.jpg" alt="Image">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="services-one__services-single">
-                                        <div class="services-one__count-and-content">
-                                            <div class="services-one__count"></div>
-                                            <div class="services-one__content">
-                                                <h3 class="services-one__title"><a href="deep-cleaning.html">Deep
-                                                        Cleaning</a></h3>
-                                                <p class="services-one__text">Thorough deep cleaning targeting
-                                                    every<br>corner for maximum hygiene</p>
-                                            </div>
-                                        </div>
-                                        <div class="services-one__arrow">
-                                            <a href="deep-cleaning.html"><span class="icon-diagonal-arrow"></span></a>
-                                        </div>
-                                    </div>
-                                    <div class="services-one__hover-img">
-                                        <img src="assets/images/services/services-1-3.jpg" alt="Image">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="services-one__services-single">
-                                        <div class="services-one__count-and-content">
-                                            <div class="services-one__count"></div>
-                                            <div class="services-one__content">
-                                                <h3 class="services-one__title"><a href="office-cleaning.html">Office
-                                                        Cleaning</a></h3>
-                                                <p class="services-one__text">Keep your workspace spotless and<br>productive
-                                                    with regular maintenance</p>
-                                            </div>
-                                        </div>
-                                        <div class="services-one__arrow">
-                                            <a href="office-cleaning.html"><span class="icon-diagonal-arrow"></span></a>
-                                        </div>
-                                    </div>
-                                    <div class="services-one__hover-img">
-                                        <img src="assets/images/services/services-1-4.jpg" alt="Image">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="services-one__services-single">
-                                        <div class="services-one__count-and-content">
-                                            <div class="services-one__count"></div>
-                                            <div class="services-one__content">
-                                                <h3 class="services-one__title"><a href="sanitizing-mopping.html">Sanitizing
-                                                        & Mopping</a></h3>
-                                                <p class="services-one__text">Advanced sanitizing and mopping for<br>a
-                                                    fresh, germ-free environment</p>
-                                            </div>
-                                        </div>
-                                        <div class="services-one__arrow">
-                                            <a href="sanitizing-mopping.html"><span class="icon-diagonal-arrow"></span></a>
-                                        </div>
-                                    </div>
-                                    <div class="services-one__hover-img">
-                                        <img src="assets/images/services/services-1-5.jpg" alt="Image">
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="services-one__top-right">
+                        <p class="services-one__top-text">
+                            Karachi Cleaners offers premium home cleaning services including<br>
+                            sofa shampooing, carpet deep cleaning, curtain washing, floor polishing,<br>
+                            and full house deep cleaning across all major areas of Karachi.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- Services One End -->
+        <div class="services-one__bottom">
+            <div class="row">
+                <div class="col-xl-5">
+                    <div class="services-one__left wow slideInLeft" data-wow-delay="100ms" data-wow-duration="2500ms">
+                        <div class="services-one__img-box">
+                            <div class="services-one__img-shape-1"></div>
+                            <div class="services-one__img">
+                                <img src="assets/images/services/services-one-img-1.jpg" alt="Professional cleaning team in Karachi">
+                            </div>
+                            <div class="services-one__img-2">
+                                <img src="assets/images/services/services-one-img-2.jpg" alt="Eco-friendly cleaning products">
+                            </div>
+                            <div class="services-one__experience-box">
+                                <div class="services-one__experience-icon">
+                                    <span class="icon-trophy"></span>
+                                </div>
+                                <div class="services-one__experience-content">
+                                    <p><span class="odometer" data-count="15">00</span> <span>+ Years</span>
+                                        <br> of Professional Cleaning Excellence in Karachi
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-7">
+                    <div class="services-one__right">
+                        <ul class="services-one__services-list list-unstyled">
+                            @php
+                                // Show first 5 services (you can change the number or order)
+                                $displayServices = array_slice($services, 0, 5);
+                            @endphp
+
+                            @foreach($displayServices as $slug => $service)
+                            <li>
+                                <div class="services-one__services-single">
+                                    <div class="services-one__count-and-content">
+                                        <div class="services-one__count"></div>
+                                        <div class="services-one__content">
+                                            <h3 class="services-one__title">
+                                                <a href="{{ route('service.details', $slug) }}">
+                                                    {{ $service['name'] }}
+                                                </a>
+                                            </h3>
+                                            <p class="services-one__text">
+                                                {{ Str::limit($service['description'], 80) }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="services-one__arrow">
+                                        <a href="{{ route('service.details', $slug) }}">
+                                            <span class="icon-diagonal-arrow"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="services-one__hover-img">
+                                    <img src="{{ asset($service['image']) }}" alt="{{ $service['name'] }} Karachi">
+                                </div>
+                            </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services One End -->
 
     <!-- Sliding Text Two Start -->
     <section class="sliding-text-two">

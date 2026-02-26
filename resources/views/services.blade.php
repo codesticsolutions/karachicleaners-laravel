@@ -93,33 +93,83 @@
         <div class="sliding-text-three__wrap">
             <ul class="sliding-text-three__list list-unstyled marquee_mode">
                 <li>
-                    <h2 data-hover="Organizing" class="sliding-text-three__title">Organizing
-                        <span class="icon-star-2"></span>
+                    <h2 data-hover="Deep Cleaning" class="sliding-text-three__title">Deep Cleaning <span
+                            class="icon-star-2"></span></h2>
+                </li>
+                <li>
+                    <h2 data-hover="Carpet Cleaning" class="sliding-text-three__title">Carpet Cleaning <span
+                            class="icon-star-2"></span></h2>
+                </li>
+                <li>
+                    <h2 data-hover="Sofa Cleaning" class="sliding-text-three__title">Sofa Cleaning <span
+                            class="icon-star-2"></span></h2>
+                </li>
+                <li>
+                    <h2 data-hover="Curtain Cleaning" class="sliding-text-three__title">Curtain Cleaning <span
+                            class="icon-star-2"></span></h2>
+                </li>
+                <li>
+                    <h2 data-hover="Upholstery Cleaning" class="sliding-text-three__title">Upholstery Cleaning <span
+                            class="icon-star-2"></span></h2>
+                </li>
+                <li>
+                    <h2 data-hover="Window Cleaning" class="sliding-text-three__title">Window Cleaning <span
+                            class="icon-star-2"></span></h2>
+                </li>
+                <li>
+                    <h2 data-hover="Tile Cleaning" class="sliding-text-three__title">Tile Cleaning <span
+                            class="icon-star-2"></span></h2>
+                </li>
+                <li>
+                    <h2 data-hover="Grout Cleaning" class="sliding-text-three__title">Grout Cleaning <span
+                            class="icon-star-2"></span></h2>
+                </li>
+                <li>
+                    <h2 data-hover="Steam Cleaning" class="sliding-text-three__title">Steam Cleaning <span
+                            class="icon-star-2"></span></h2>
+                </li>
+                <li>
+                    <h2 data-hover="Floor Polishing" class="sliding-text-three__title">Floor Polishing <span
+                            class="icon-star-2"></span></h2>
+                </li>
+                <li>
+                    <h2 data-hover="Stain Removal" class="sliding-text-three__title">Stain Removal <span
+                            class="icon-star-2"></span></h2>
+                </li>
+                <li>
+                    <h2 data-hover="Odor Removal" class="sliding-text-three__title">Odor Removal <span
+                            class="icon-star-2"></span></h2>
+                </li>
+                <li>
+                    <h2 data-hover="Disinfecting" class="sliding-text-three__title">Disinfecting <span
+                            class="icon-star-2"></span></h2>
+                </li>
+                <li>
+                    <h2 data-hover="Pressure Washing" class="sliding-text-three__title">Pressure Washing <span
+                            class="icon-star-2"></span></h2>
+                </li>
+                <li>
+                    <h2 data-hover="Organizing" class="sliding-text-three__title">Organizing <span
+                            class="icon-star-2"></span></h2>
+                </li>
+                <li>
+                    <h2 data-hover="Sanitizing" class="sliding-text-three__title">Sanitizing <span
+                            class="icon-star-2"></span></h2>
+                </li>
+                <li>
+                    <h2 data-hover="Mopping" class="sliding-text-three__title">Mopping <span class="icon-star-2"></span>
                     </h2>
                 </li>
                 <li>
-                    <h2 data-hover="Sanitizing" class="sliding-text-three__title">Sanitizing
-                        <span class="icon-star-2"></span>
+                    <h2 data-hover="Dusting" class="sliding-text-three__title">Dusting <span class="icon-star-2"></span>
                     </h2>
                 </li>
                 <li>
-                    <h2 data-hover="Mopping" class="sliding-text-three__title">Mopping
-                        <span class="icon-star-2"></span>
+                    <h2 data-hover="Vacuuming" class="sliding-text-three__title">Vacuuming <span class="icon-star-2"></span>
                     </h2>
                 </li>
                 <li>
-                    <h2 data-hover="Dusting" class="sliding-text-three__title">Dusting
-                        <span class="icon-star-2"></span>
-                    </h2>
-                </li>
-                <li>
-                    <h2 data-hover="Vacuuming" class="sliding-text-three__title">Vacuuming
-                        <span class="icon-star-2"></span>
-                    </h2>
-                </li>
-                <li>
-                    <h2 data-hover="Polishing" class="sliding-text-three__title">Polishing
-                        <span class="icon-star-2"></span>
+                    <h2 data-hover="Polishing" class="sliding-text-three__title">Polishing <span class="icon-star-2"></span>
                     </h2>
                 </li>
             </ul>
