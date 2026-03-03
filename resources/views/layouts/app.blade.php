@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@yield('title')</title>
     <base href="{{ url('/') }}/">
+
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/resources/1.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/resources/1.png" />
@@ -149,8 +150,7 @@
     <!-- /.mobile-nav__wrapper -->
 
     <!-- WhatsApp Floating Button -->
-<a href="https://wa.me/923001234567" target="_blank"
-   style="position: fixed;
+    <a href="https://wa.me/923001234567" target="_blank" style="position: fixed;
           right: 30px;
           bottom: 160px;
           width: 55px;
@@ -163,21 +163,19 @@
           box-shadow: 0 8px 25px rgba(0,0,0,0.15);
           z-index: 999;
           text-decoration: none;
-          transition: transform 0.3s ease;"
-   onmouseover="this.style.transform='scale(1.1)'"
-   onmouseout="this.style.transform='scale(1)'">
+          transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.1)'"
+        onmouseout="this.style.transform='scale(1)'">
 
-    <i class="fab fa-whatsapp"
-       style="font-size: 26px; color: white;"></i>
-</a>
+        <i class="fab fa-whatsapp" style="font-size: 26px; color: white;"></i>
+    </a>
 
-<!-- Scroll To Top Button -->
-<a href="#" data-target="html" class="scroll-to-target scroll-to-top">
-    <span class="scroll-to-top__wrapper">
-        <span class="scroll-to-top__inner"></span>
-    </span>
-    <span class="scroll-to-top__text"> Go Back Top</span>
-</a>
+    <!-- Scroll To Top Button -->
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top">
+        <span class="scroll-to-top__wrapper">
+            <span class="scroll-to-top__inner"></span>
+        </span>
+        <span class="scroll-to-top__text"> Go Back Top</span>
+    </a>
 
     <script src="assets/js/jquery-latest.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -212,4 +210,5 @@
     <!-- template js -->
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
