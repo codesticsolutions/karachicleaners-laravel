@@ -149,8 +149,14 @@ jobs:
           if [ -n "$(git status --porcelain)" ]; then
             git checkout -b $BRANCH
             git add resources/views/ config/
-git commit -m "♻️ SEO Optimization: Auto-optimized content with AI - Updated meta tags - Optimized titles and descriptions - Integrated trending keywords - Improved keyword coverage - Enhanced for Pakistan cleaning market"
-git push origin $BRANCH
+            git commit -m "♻️ SEO Optimization: Auto-optimized content with AI
+
+- Updated meta tags
+- Optimized titles and descriptions
+- Integrated trending keywords
+- Improved keyword coverage
+- Enhanced for Pakistan cleaning market"
+            git push origin $BRANCH
             
             echo "✅ Changes committed to branch: $BRANCH"
             echo "📌 Pull request will be created (manually review and merge)"
