@@ -1,6 +1,6 @@
 # Robots.txt for https://karachicleaners.com
 # Generated automatically - do not edit manually
-# Generated at: 2026-03-10 23:07:14
+# Generated at: 2026-03-10 23:17:56
 
 # Allow all search engines to crawl public pages
 User-agent: *
@@ -15,9 +15,6 @@ Disallow: /storage/
 Disallow: /vendor/
 Disallow: /node_modules/
 Disallow: /tests/
-Disallow: /*?*
-Disallow: /search
-Disallow: /results
 
 # Disallow staging and backup versions
 Disallow: /staging/
@@ -25,11 +22,6 @@ Disallow: /backup/
 Disallow: /old/
 Disallow: /temp/
 Disallow: /test/
-
-# Disallow duplicate content formats
-Disallow: /*.pdf$
-Disallow: /*.doc$
-Disallow: /*.docx$
 
 # Crawl delay (in seconds) for Google bot
 User-agent: Googlebot
@@ -54,8 +46,3 @@ Disallow: /
 
 # Sitemap location
 Sitemap: https://karachicleaners.com/sitemap.xml
-
-# Additional directives
-# Rate limiting handled by server
-# Cache-Control headers set in .htaccess or web.config
-
