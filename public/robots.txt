@@ -1,6 +1,6 @@
 # Robots.txt for https://karachicleaners.com
 # Generated automatically - do not edit manually
-# Generated at: 2026-03-10 23:42:14
+# Generated at: 2026-03-10 23:52:34
 
 # Allow all search engines to crawl public pages
 User-agent: *
