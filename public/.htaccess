@@ -13,21 +13,38 @@
     RewriteCond %{HTTP:x-xsrf-token} .
     RewriteRule .* - [E=HTTP_X_XSRF_TOKEN:%{HTTP:X-XSRF-Token}]
 
-    # Redirect Trailing Slashes If Not A Folder
+    # ========================================
+    # EXPLICITLY ALLOW STATIC FILES FIRST
+    # This MUST come before the main rewrite
+    # ========================================
+    
+    # Allow sitemap.xml
+    RewriteRule ^sitemap\.xml$ - [L]
+    
+    # Allow robots.txt
+    RewriteRule ^robots\.txt$ - [L]
+    
+    # Allow all real files
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^ - [L]
+    
+    # Allow all real directories
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$
     RewriteRule ^ %1 [L,R=301]
 
-    # Send Requests To Front Controller
+    # Send Requests To Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
-    
-    # Allow static files first (sitemap.xml, robots.txt, etc)
-    RewriteCond %{REQUEST_FILENAME} -f
-    RewriteRule ^ - [L]
-
-    RewriteCond %{REQUEST_FILENAME} -d
-    RewriteRule ^ - [L]
-    
     RewriteRule ^ index.php [L]
 </IfModule>
+
+# Set Content-Type for XML files
+<FilesMatch "\.xml$">
+    AddType application/xml .xml
+    Header set Content-Type "application/xml; charset=UTF-8"
+</FilesMatch>
