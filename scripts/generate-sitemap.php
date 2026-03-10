@@ -2,119 +2,105 @@
 <?php
 
 /**
- * Sitemap Generator for Karachi Cleaners
- * 
- * Generates sitemap.xml from actual routes and cleaning services
- * Reads from config/cleaning-services.php
+ * Generate Sitemap XML
+ * Strict structure: only loc and lastmod (no priority, changefreq, etc)
  */
 
-class SitemapGenerator
-{
-    private $baseUrl = 'https://karachicleaners.com';
-    private $outputPath = __DIR__ . '/../public/sitemap.xml';
-    private $cleaningServices = [];
+// Get base URL
+$baseUrl = 'https://karachicleaners.com';
+
+// Start XML with proper declaration
+$xml = '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
+$xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
+
+// Today's date
+$today = date('Y-m-d');
+
+// Static pages
+$staticPages = [
+    '/',
+    '/about',
+    '/services',
+    '/gallery',
+    '/contact',
+    '/blog',
+];
+
+// Service pages
+$services = [
+    'sofa-cleaning',
+    'carpet-cleaning',
+    'curtain-cleaning',
+    'glass-cleaning',
+    'floor-tile-cleaning',
+    'solar-panel-cleaning',
+    'full-house-cleaning',
+    'car-interior-cleaning',
+];
+
+echo "🗺️  Generating sitemap.xml...\n\n";
+
+// Add static pages
+echo "📄 Adding Static Pages:\n";
+foreach ($staticPages as $path) {
+    $url = $baseUrl . $path;
     
-    public function __construct()
-    {
-        // Load cleaning services config
-        $configPath = __DIR__ . '/../config/cleaning-services.php';
-        
-        if (!file_exists($configPath)) {
-            throw new Exception("Config file not found: $configPath");
-        }
-        
-        $this->cleaningServices = require $configPath;
-    }
+    $xml .= '  <url>' . PHP_EOL;
+    $xml .= '    <loc>' . htmlspecialchars($url, ENT_XML1, 'UTF-8') . '</loc>' . PHP_EOL;
+    $xml .= '    <lastmod>' . $today . '</lastmod>' . PHP_EOL;
+    $xml .= '  </url>' . PHP_EOL;
     
-    /**
-     * Generate the sitemap
-     */
-    public function generate()
-    {
-        echo "🗺️  Generating sitemap.xml...\n";
-        
-        // Create the XML
-        $xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>');
-        
-        // Add static pages
-        $staticPages = [
-            '/' => ['priority' => 0.9, 'changefreq' => 'monthly', 'label' => 'Home'],
-            '/about' => ['priority' => 0.7, 'changefreq' => 'monthly', 'label' => 'About'],
-            '/services' => ['priority' => 0.85, 'changefreq' => 'weekly', 'label' => 'Services'],
-            '/gallery' => ['priority' => 0.6, 'changefreq' => 'weekly', 'label' => 'Gallery'],
-            '/contact' => ['priority' => 0.9, 'changefreq' => 'monthly', 'label' => 'Contact'],
-            '/blog' => ['priority' => 0.6, 'changefreq' => 'weekly', 'label' => 'Blog'],
-        ];
-        
-        echo "\n📄 Adding Static Pages:\n";
-        foreach ($staticPages as $route => $data) {
-            $this->addUrl($xml, $route, $data['priority'], $data['changefreq']);
-            echo "   ✅ {$data['label']} ($route)\n";
-        }
-        
-        // Add service pages from config
-        echo "\n🔧 Adding Service Pages:\n";
-        foreach ($this->cleaningServices as $slug => $service) {
-            $route = '/services/' . $slug;
-            $this->addUrl($xml, $route, 0.8, 'weekly');
-            echo "   ✅ {$service['name']} ($route)\n";
-        }
-        
-        // Save the XML
-        $this->saveXml($xml);
-        
-        echo "\n✅ Sitemap generated successfully!\n";
-        echo "📊 Total URLs: " . count($xml->url) . "\n";
-        echo "💾 Saved to: {$this->outputPath}\n";
-        
-        return true;
-    }
-    
-    /**
-     * Add a URL to the sitemap
-     */
-    private function addUrl($xml, $path, $priority = 0.5, $changefreq = 'weekly')
-    {
-        $url = $xml->addChild('url');
-        $url->addChild('loc', $this->baseUrl . $path);
-        $url->addChild('lastmod', date('Y-m-d'));
-        $url->addChild('changefreq', $changefreq);
-        $url->addChild('priority', number_format($priority, 1));
-    }
-    
-    /**
-     * Save the XML to file
-     */
-    private function saveXml($xml)
-    {
-        // Ensure public directory exists
-        $publicDir = dirname($this->outputPath);
-        if (!is_dir($publicDir)) {
-            mkdir($publicDir, 0755, true);
-        }
-        
-        // Format the XML nicely
-        $dom = new DOMDocument('1.0', 'UTF-8');
-        $dom->preserveWhiteSpace = false;
-        $dom->formatOutput = true;
-        $dom->loadXML($xml->asXML());
-        
-        // Save to file
-        $dom->save($this->outputPath);
-        
-        // Verify
-        if (!file_exists($this->outputPath)) {
-            throw new Exception("Failed to save sitemap: {$this->outputPath}");
-        }
-    }
+    $displayPath = ($path === '/') ? 'Home /' : ltrim($path, '/');
+    echo "   ✅ $displayPath\n";
 }
 
-// Run the generator
-try {
-    $generator = new SitemapGenerator();
-    $generator->generate();
-    echo "\n🎉 Sitemap generation complete!\n\n";
-} catch (Exception $e) {
-    echo "❌ Error: " . $e->getMessage() . "\n";
+echo "\n🔧 Adding Service Pages:\n";
+
+// Add service pages
+foreach ($services as $service) {
+    $url = $baseUrl . '/services/' . $service;
+    
+    $xml .= '  <url>' . PHP_EOL;
+    $xml .= '    <loc>' . htmlspecialchars($url, ENT_XML1, 'UTF-8') . '</loc>' . PHP_EOL;
+    $xml .= '    <lastmod>' . $today . '</lastmod>' . PHP_EOL;
+    $xml .= '  </url>' . PHP_EOL;
+    
+    $serviceName = ucwords(str_replace('-', ' ', $service));
+    echo "   ✅ /services/$service\n";
+}
+
+// Close XML
+$xml .= '</urlset>' . PHP_EOL;
+
+// Write to file
+$publicDir = __DIR__ . '/../public';
+if (!is_dir($publicDir)) {
+    mkdir($publicDir, 0755, true);
+}
+
+$sitemapPath = $publicDir . '/sitemap.xml';
+
+if (file_put_contents($sitemapPath, $xml) !== false) {
+    echo "\n✅ Sitemap generated successfully!\n";
+    echo "📊 Total URLs: " . (count($staticPages) + count($services)) . "\n";
+    echo "📁 File: public/sitemap.xml\n";
+    echo "📏 Size: " . number_format(filesize($sitemapPath)) . " bytes\n";
+    echo "🌐 URL: https://karachicleaners.com/sitemap.xml\n\n";
+    
+    // Verify XML is valid
+    $sxe = simplexml_load_file($sitemapPath);
+    if ($sxe === false) {
+        echo "❌ XML validation failed!\n";
+        exit(1);
+    }
+    
+    $urlCount = count($sxe->url);
+    echo "✅ XML validation: PASSED ($urlCount URLs)\n";
+    echo "✅ Structure: STRICT (only loc and lastmod)\n";
+    echo "\n🎉 Sitemap generation complete!\n";
+} else {
+    echo "❌ Failed to write sitemap.xml\n";
     exit(1);
 }
+
+exit(0);
