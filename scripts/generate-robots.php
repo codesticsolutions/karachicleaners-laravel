@@ -2,57 +2,16 @@
 <?php
 
 /**
- * Generate robots.txt for SEO
- * Creates a proper robots.txt file without blocking search engines
+ * Generate robots.txt
+ * Strict structure: Googlebot rule, Allow all, Sitemap
  */
 
-$robotsContent = "# Robots.txt for https://karachicleaners.com
-# Generated automatically - do not edit manually
-# Generated at: " . date('Y-m-d H:i:s') . "
+$robotsContent = "User-agent: Googlebot
+Disallow: /nogooglebot/
 
-# Allow all search engines to crawl public pages
 User-agent: *
 Allow: /
 
-# Disallow private and admin areas
-Disallow: /admin/
-Disallow: /api/
-Disallow: /.env
-Disallow: /config/
-Disallow: /storage/
-Disallow: /vendor/
-Disallow: /node_modules/
-Disallow: /tests/
-
-# Disallow staging and backup versions
-Disallow: /staging/
-Disallow: /backup/
-Disallow: /old/
-Disallow: /temp/
-Disallow: /test/
-
-# Crawl delay (in seconds) for Google bot
-User-agent: Googlebot
-Crawl-delay: 0
-
-# Crawl delay for other bots (be nice to servers)
-User-agent: Bingbot
-Crawl-delay: 1
-
-User-agent: Slurp
-Crawl-delay: 1
-
-# Block known bad/spam bots
-User-agent: AhrefsBot
-Disallow: /
-
-User-agent: SemrushBot
-Disallow: /
-
-User-agent: MJ12bot
-Disallow: /
-
-# Sitemap location
 Sitemap: https://karachicleaners.com/sitemap.xml
 ";
 
@@ -66,12 +25,29 @@ if (!is_dir($publicDir)) {
 
 $robotsPath = $publicDir . '/robots.txt';
 
+echo "🤖 Generating robots.txt...\n\n";
+
 // Write robots.txt
 if (file_put_contents($robotsPath, $robotsContent) !== false) {
-    echo "🤖 robots.txt generated successfully!\n";
-    echo "📁 Location: $robotsPath\n";
-    echo "✅ Search engines can now crawl your site\n";
+    echo "✅ robots.txt generated successfully!\n";
+    echo "📁 File: public/robots.txt\n";
+    echo "📏 Size: " . number_format(filesize($robotsPath)) . " bytes\n";
+    echo "🌐 URL: https://karachicleaners.com/robots.txt\n\n";
+    
+    // Display content
+    echo "Content:\n";
+    echo "========\n";
+    echo $robotsContent;
+    echo "========\n\n";
+    
+    echo "✅ Structure: STRICT\n";
+    echo "✅ Googlebot: Disallow /nogooglebot/ only\n";
+    echo "✅ All other bots: Allow /\n";
+    echo "✅ Sitemap: Referenced\n";
+    echo "\n🎉 robots.txt generation complete!\n";
 } else {
     echo "❌ Failed to generate robots.txt\n";
     exit(1);
 }
+
+exit(0);
