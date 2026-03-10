@@ -44,7 +44,7 @@
                         </p>
 
                         <div class="banner-one__btn-box" style="margin-top: 25px;">
-                            <a href="contact.html" class="thm-btn">
+                            <a href="/contact" class="thm-btn">
                                 Book Cleaning Service
                                 <span><i class="icon-diagonal-arrow"></i></span>
                             </a>
@@ -727,7 +727,7 @@
                                             <span class="icon-employee"></span>
                                             <div class="why-choose-one__count"></div>
                                         </div>
-                                        <h3 class="why-choose-one__title"><a href="team.html">Certified Team</a>
+                                        <h3 class="why-choose-one__title"><a href="">Certified Team</a>
                                         </h3>
                                         <p class="why-choose-one__text">Our trained and certified cleaning professionals
                                             deliver consistent, high-quality results in every home and office.</p>
@@ -741,7 +741,7 @@
                                             <span class="icon-cleaning-2"></span>
                                             <div class="why-choose-one__count"></div>
                                         </div>
-                                        <h3 class="why-choose-one__title"><a href="about.html">Premium Quality</a>
+                                        <h3 class="why-choose-one__title"><a href="/about">Premium Quality</a>
                                         </h3>
                                         <p class="why-choose-one__text">We use advanced cleaning techniques and premium
                                             products to ensure spotless, hygienic spaces every time.</p>
@@ -755,7 +755,7 @@
                                             <span class="icon-window-cleaning"></span>
                                             <div class="why-choose-one__count"></div>
                                         </div>
-                                        <h3 class="why-choose-one__title"><a href="about.html">Eco-Friendly Solutions</a>
+                                        <h3 class="why-choose-one__title"><a href="/about">Eco-Friendly Solutions</a>
                                         </h3>
                                         <p class="why-choose-one__text">We use environmentally safe cleaning products that
                                             are effective and safe for families and businesses.</p>
@@ -769,7 +769,7 @@
                                             <span class="icon-time"></span>
                                             <div class="why-choose-one__count"></div>
                                         </div>
-                                        <h3 class="why-choose-one__title"><a href="about.html">24/7 Available</a>
+                                        <h3 class="why-choose-one__title"><a href="/about">24/7 Available</a>
                                         </h3>
                                         <p class="why-choose-one__text">Available round the clock in Karachi with flexible
                                             scheduling to match your lifestyle and work commitments.</p>
@@ -846,7 +846,7 @@
                                     <img src="assets/images/project/project-1-1.jpg" alt="">
                                 </div>
                                 <div class="project-one__view-box">
-                                    <a href="project-details.html" class="project-one__view">
+                                    <a href="" class="project-one__view">
                                         <i class="icon-diagonal-arrow"></i>
                                         <span>View More</span>
                                     </a>
@@ -854,7 +854,7 @@
                             </div>
                             <div class="project-one__content">
                                 <p class="project-one__tag">Residential<span class="icon-right-arrow"></span>November 24</p>
-                                <h3 class="project-one__title"><a href="project-details.html">Sparkle & Shine
+                                <h3 class="project-one__title"><a href="">Sparkle & Shine
                                         Services</a></h3>
                             </div>
                         </div>
@@ -868,7 +868,7 @@
                                     <img src="assets/images/project/project-1-2.jpg" alt="">
                                 </div>
                                 <div class="project-one__view-box">
-                                    <a href="project-details.html" class="project-one__view">
+                                    <a href="" class="project-one__view">
                                         <i class="icon-diagonal-arrow"></i>
                                         <span>View More</span>
                                     </a>
@@ -877,7 +877,7 @@
                             <div class="project-one__content">
                                 <p class="project-one__tag">Commercial<span class="icon-right-arrow"></span>November
                                     24</p>
-                                <h3 class="project-one__title"><a href="project-details.html">Pure Clean
+                                <h3 class="project-one__title"><a href="">Pure Clean
                                         Solutions</a></h3>
                             </div>
                         </div>
@@ -891,7 +891,7 @@
                                     <img src="assets/images/project/project-1-3.jpg" alt="">
                                 </div>
                                 <div class="project-one__view-box">
-                                    <a href="project-details.html" class="project-one__view">
+                                    <a href="" class="project-one__view">
                                         <i class="icon-diagonal-arrow"></i>
                                         <span>View More</span>
                                     </a>
@@ -900,7 +900,7 @@
                             <div class="project-one__content">
                                 <p class="project-one__tag">Deep CLEAN<span class="icon-right-arrow"></span>November
                                     24</p>
-                                <h3 class="project-one__title"><a href="project-details.html">Fresh Space
+                                <h3 class="project-one__title"><a href="">Fresh Space
                                         Experts</a></h3>
                             </div>
                         </div>
@@ -914,7 +914,7 @@
                                     <img src="assets/images/project/project-1-4.jpg" alt="">
                                 </div>
                                 <div class="project-one__view-box">
-                                    <a href="project-details.html" class="project-one__view">
+                                    <a href="" class="project-one__view">
                                         <i class="icon-diagonal-arrow"></i>
                                         <span>View More</span>
                                     </a>
@@ -923,7 +923,7 @@
                             <div class="project-one__content">
                                 <p class="project-one__tag">Moveout<span class="icon-right-arrow"></span>November 24
                                 </p>
-                                <h3 class="project-one__title"><a href="project-details.html">Eco Gleam Crew</a>
+                                <h3 class="project-one__title"><a href="">Eco Gleam Crew</a>
                                 </h3>
                             </div>
                         </div>
@@ -937,7 +937,7 @@
                                     <img src="assets/images/project/project-1-5.jpg" alt="">
                                 </div>
                                 <div class="project-one__view-box">
-                                    <a href="project-details.html" class="project-one__view">
+                                    <a href="" class="project-one__view">
                                         <i class="icon-diagonal-arrow"></i>
                                         <span>View More</span>
                                     </a>
@@ -945,7 +945,7 @@
                             </div>
                             <div class="project-one__content">
                                 <p class="project-one__tag">Specialized<span class="icon-right-arrow"></span>November 24</p>
-                                <h3 class="project-one__title"><a href="project-details.html">Neat Nest Pros</a>
+                                <h3 class="project-one__title"><a href="">Neat Nest Pros</a>
                                 </h3>
                             </div>
                         </div>
@@ -957,10 +957,10 @@
                             <div class="project-one__single-2-img">
                                 <img src="assets/images/project/project-one-single-two-img-1.png" alt="">
                             </div>
-                            <h3 class="project-one__title-2"><a href="project-details.html">Do you have any project
+                            <h3 class="project-one__title-2"><a href="">Do you have any project
                                     <br>ideas in mind?</a></h3>
                             <div class="project-one__view-box-2">
-                                <a href="project-details.html" class="project-one__view-2">
+                                <a href="" class="project-one__view-2">
                                     <i class="icon-diagonal-arrow"></i>
                                     <span>View More<br> Project</span>
                                 </a>
@@ -1016,7 +1016,7 @@
                         </div>
                         <div class="testimonial-one__client-info">
                             <div class="testimonial-one__client-content">
-                                <h4 class="testimonial-one__client-name"><a href="testimonials.html">Emily Carter</a></h4>
+                                <h4 class="testimonial-one__client-name"><a href="">Emily Carter</a></h4>
                                 <p class="testimonial-one__client-sub-title">Business Owner</p>
                             </div>
 
@@ -1043,7 +1043,7 @@
                         </div>
                         <div class="testimonial-one__client-info">
                             <div class="testimonial-one__client-content">
-                                <h4 class="testimonial-one__client-name"><a href="testimonials.html">Michael Brown</a></h4>
+                                <h4 class="testimonial-one__client-name"><a href="">Michael Brown</a></h4>
                                 <p class="testimonial-one__client-sub-title">Financial Analyst</p>
                             </div>
 
@@ -1070,7 +1070,7 @@
                         </div>
                         <div class="testimonial-one__client-info">
                             <div class="testimonial-one__client-content">
-                                <h4 class="testimonial-one__client-name"><a href="testimonials.html">Sarah Thompson</a></h4>
+                                <h4 class="testimonial-one__client-name"><a href="">Sarah Thompson</a></h4>
                                 <p class="testimonial-one__client-sub-title">Marketing Manager</p>
                             </div>
 
@@ -1097,7 +1097,7 @@
                         </div>
                         <div class="testimonial-one__client-info">
                             <div class="testimonial-one__client-content">
-                                <h4 class="testimonial-one__client-name"><a href="testimonials.html">John Peterson</a></h4>
+                                <h4 class="testimonial-one__client-name"><a href="">John Peterson</a></h4>
                                 <p class="testimonial-one__client-sub-title">Software Developer</p>
                             </div>
 
@@ -1127,7 +1127,7 @@
                         </div>
                         <div class="testimonial-one__client-info">
                             <div class="testimonial-one__client-content">
-                                <h4 class="testimonial-one__client-name"><a href="testimonials.html">Sarah Thompson</a></h4>
+                                <h4 class="testimonial-one__client-name"><a href="">Sarah Thompson</a></h4>
                                 <p class="testimonial-one__client-sub-title">Marketing Manager</p>
                             </div>
 
@@ -1154,7 +1154,7 @@
                         </div>
                         <div class="testimonial-one__client-info">
                             <div class="testimonial-one__client-content">
-                                <h4 class="testimonial-one__client-name"><a href="testimonials.html">Emily Carter</a></h4>
+                                <h4 class="testimonial-one__client-name"><a href="">Emily Carter</a></h4>
                                 <p class="testimonial-one__client-sub-title">Business Owner</p>
                             </div>
 
@@ -1181,7 +1181,7 @@
                         </div>
                         <div class="testimonial-one__client-info">
                             <div class="testimonial-one__client-content">
-                                <h4 class="testimonial-one__client-name"><a href="testimonials.html">Michael Brown</a></h4>
+                                <h4 class="testimonial-one__client-name"><a href="">Michael Brown</a></h4>
                                 <p class="testimonial-one__client-sub-title">Financial Analyst</p>
                             </div>
 
@@ -1207,7 +1207,7 @@
                         </div>
                         <div class="testimonial-one__client-info">
                             <div class="testimonial-one__client-content">
-                                <h4 class="testimonial-one__client-name"><a href="testimonials.html">John Peterson</a></h4>
+                                <h4 class="testimonial-one__client-name"><a href="">John Peterson</a></h4>
                                 <p class="testimonial-one__client-sub-title">Financial Analyst</p>
                             </div>
 

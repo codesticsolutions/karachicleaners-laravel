@@ -135,7 +135,7 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="site-footer__bottom-text-box">
                             <p class="site-footer__bottom-text">
-                                Copyright © 2025 Your Company. All rights reserved.
+                                Copyright © 2025 Karachi Cleaners. All rights reserved.
                             </p>
                         </div>
                     </div>
