@@ -8,16 +8,8 @@ Route::get('/', function () use ($cleaningServices) {
 })->name('home');
 
 Route::get('/about', function () {
-    return view('about'); // loads about.blade.php
+    return view('about');
 });
-
-// Route::get('/services', function () {
-//     return view('services'); // loads services.blade.php
-// });
-
-// Route::get('/gallery', function () {
-//     return view('gallery');
-// });
 
 Route::get('/contact', function () {
     return view('contact');
@@ -27,7 +19,6 @@ Route::get('/contact', function () {
 | Services Listing Page (Optional but Recommended)
 |--------------------------------------------------------------------------
 */
-
 Route::get('/services', function () use ($cleaningServices) {
     $karachiAreas = [
         'DHA Karachi',
@@ -72,6 +63,6 @@ Route::get('/services/{slug}', function ($slug) use ($cleaningServices) {
     return view('services.details', [
         'service' => $service,
         'slug' => $slug,
-        'allServices' => $cleaningServices, // This is what your view expects
+        'allServices' => $cleaningServices,
     ]);
 })->name('service.details');
