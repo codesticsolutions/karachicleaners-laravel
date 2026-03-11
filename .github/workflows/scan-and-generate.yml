@@ -1,0 +1,104 @@
+name: Scan & Generate Sitemap & robots.txt
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  PHP_VERSION: '8.2'
+
+jobs:
+  scan-and-generate:
+    name: Scan Site & Generate Files
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: ⬇️ Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: 🐘 Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ env.PHP_VERSION }}
+          extensions: curl, json, mbstring, xml
+          tools: composer
+          coverage: none
+          ini-file: production
+      
+      - name: 📁 Create Public & Storage Directories
+        run: |
+          mkdir -p public
+          mkdir -p storage/scan-logs
+          chmod -R 755 public storage/
+      
+      - name: 🔍 Scan karachicleaners.com for URLs
+        run: |
+          php scripts/scan-site.php
+      
+      - name: 🗺️ Generate Sitemap from Scanned URLs
+        run: |
+          php scripts/generate-sitemap-from-scan.php
+      
+      - name: 🤖 Generate robots.txt
+        run: |
+          php scripts/generate-robots.php
+      
+      - name: ✅ Validate Generated Files
+        run: |
+          echo "Validating sitemap.xml..."
+          if [ -f public/sitemap.xml ]; then
+            php -r "
+              \$xml = simplexml_load_file('public/sitemap.xml');
+              if (\$xml === false) {
+                echo '❌ Invalid XML in sitemap.xml';
+                exit(1);
+              }
+              \$urls = \$xml->url;
+              echo '✅ Sitemap is valid XML with ' . count(\$urls) . ' URLs';
+            " || true
+          else
+            echo "⚠️ sitemap.xml not found"
+          fi
+          
+          echo ""
+          echo "Validating robots.txt..."
+          if [ -f public/robots.txt ]; then
+            echo "✅ robots.txt exists"
+            wc -l public/robots.txt
+          else
+            echo "⚠️ robots.txt not found"
+          fi
+      
+      - name: 📝 Commit Changes (if any)
+        run: |
+          git config user.name "🤖 Site Scanner Bot"
+          git config user.email "scanner@karachicleaners.com"
+          
+          if git diff --quiet public/; then
+            echo "✅ No changes to commit"
+          else
+            echo "📝 Changes detected, committing..."
+            git add public/sitemap.xml public/robots.txt
+            git commit -m "🔄 Auto-scanned site & generated sitemap + robots.txt [skip ci]" || echo "Nothing to commit"
+            git push origin main || echo "Nothing new to push"
+            echo "✅ Changes pushed"
+          fi
+      
+      - name: 📊 Workflow Summary
+        run: |
+          echo "=========================================="
+          echo "Site Scan & Generation Complete"
+          echo "=========================================="
+          echo ""
+          [ -f public/sitemap.xml ] && echo "✅ public/sitemap.xml" || echo "❌ public/sitemap.xml"
+          [ -f public/robots.txt ] && echo "✅ public/robots.txt" || echo "❌ public/robots.txt"
+          echo ""
+          echo "=========================================="
