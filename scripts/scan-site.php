@@ -54,7 +54,7 @@ function shouldIncludeUrl($url, $baseUrl) {
     }
     
     // Skip asset files
-    if (preg_match('/\.(css|js|png|jpg|jpeg|gif|webp|svg|ttf|woff|woff2|eot|ico)$/i', $url)) {
+    if (preg_match('/\.(css|js|png|jpg|jpeg|gif|webp|svg|ttf|woff|woff2|eot|ico|webmanifest|json|xml)$/i', $url)) {
         return false;
     }
     
