@@ -3,13 +3,10 @@
 
 /**
  * Generate robots.txt
- * Strict structure: Googlebot rule, Allow all, Sitemap
+ * Minimal structure: User-agent, Allow, Sitemap only
  */
 
-$robotsContent = "User-agent: Googlebot
-Disallow: /nogooglebot/
-
-User-agent: *
+$robotsContent = "User-agent: *
 Allow: /
 
 Sitemap: https://karachicleaners.com/sitemap.xml
@@ -40,10 +37,9 @@ if (file_put_contents($robotsPath, $robotsContent) !== false) {
     echo $robotsContent;
     echo "========\n\n";
     
-    echo "✅ Structure: STRICT\n";
-    echo "✅ Googlebot: Disallow /nogooglebot/ only\n";
-    echo "✅ All other bots: Allow /\n";
-    echo "✅ Sitemap: Referenced\n";
+    echo "✅ Structure: MINIMAL\n";
+    echo "✅ Allows all bots\n";
+    echo "✅ References sitemap\n";
     echo "\n🎉 robots.txt generation complete!\n";
 } else {
     echo "❌ Failed to generate robots.txt\n";
