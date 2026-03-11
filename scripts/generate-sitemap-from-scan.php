@@ -2,11 +2,11 @@
 <?php
 
 /**
- * Generate Sitemap from Scanned URLs
- * Creates sitemap.xml from the latest scan results
+ * Generate Sitemap XML with Homepage
+ * Includes: homepage, proper priorities, ISO 8601 timestamps
  */
 
-echo "🗺️  Generating sitemap.xml from scanned URLs...\n\n";
+echo "🗺️  Generating sitemap.xml with homepage...\n\n";
 
 $logsDir = __DIR__ . '/../storage/scan-logs';
 $publicDir = __DIR__ . '/../public';
@@ -36,18 +36,20 @@ $urls = [];
 
 if ($urlsFile && file_exists($urlsFile)) {
     echo "📄 Using scanned URLs from: " . basename($urlsFile) . "\n";
-    $urls = json_decode(file_get_contents($urlsFile), true);
-} else {
+    $scannedUrls = json_decode(file_get_contents($urlsFile), true);
+    if (is_array($scannedUrls)) {
+        $urls = $scannedUrls;
+    }
+}
+
+// If no scanned URLs, use default list
+if (empty($urls)) {
     echo "⚠️  No scanned URLs found, using defaults\n";
-    
-    // Fallback to default URLs
     $urls = [
         'https://karachicleaners.com/',
         'https://karachicleaners.com/about',
         'https://karachicleaners.com/services',
-        'https://karachicleaners.com/gallery',
         'https://karachicleaners.com/contact',
-        'https://karachicleaners.com/blog',
         'https://karachicleaners.com/services/sofa-cleaning',
         'https://karachicleaners.com/services/carpet-cleaning',
         'https://karachicleaners.com/services/curtain-cleaning',
@@ -59,27 +61,63 @@ if ($urlsFile && file_exists($urlsFile)) {
     ];
 }
 
-// Sort and clean URLs
-$urls = array_unique($urls);
-sort($urls);
+// Ensure homepage is included
+if (!in_array('https://karachicleaners.com/', $urls) && !in_array('https://karachicleaners.com', $urls)) {
+    array_unshift($urls, 'https://karachicleaners.com/');
+}
 
-// Remove any non-string entries
-$urls = array_filter($urls, function($url) {
-    return is_string($url) && !empty($url);
+// Assign priorities based on URL type
+$urlsWithPriority = [];
+foreach ($urls as $url) {
+    if (!is_string($url) || empty($url)) {
+        continue;
+    }
+    
+    // Determine priority
+    if ($url === 'https://karachicleaners.com/' || $url === 'https://karachicleaners.com') {
+        $priority = '1.00'; // Homepage - highest
+    } elseif (strpos($url, '/services/') !== false) {
+        // Service pages
+        if (preg_match('/(solar-panel|full-house|car-interior)/', $url)) {
+            $priority = '0.64'; // Secondary services
+        } else {
+            $priority = '0.80'; // Main services
+        }
+    } else {
+        // Other pages
+        $priority = '0.80';
+    }
+    
+    $urlsWithPriority[$url] = $priority;
+}
+
+// Sort URLs (homepage first)
+uksort($urlsWithPriority, function($a, $b) {
+    // Homepage first
+    if ($a === 'https://karachicleaners.com/' || $a === 'https://karachicleaners.com') {
+        return -1;
+    }
+    if ($b === 'https://karachicleaners.com/' || $b === 'https://karachicleaners.com') {
+        return 1;
+    }
+    // Then sort alphabetically
+    return strcmp($a, $b);
 });
 
-echo "📊 Total URLs: " . count($urls) . "\n\n";
+echo "📊 Total URLs: " . count($urlsWithPriority) . "\n\n";
+
+// ISO 8601 timestamp
+$timestamp = date('c');
 
 // Build XML
 $xml = '<?xml version="1.0" encoding="UTF-8"?>' . PHP_EOL;
 $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . PHP_EOL;
 
-$today = date('Y-m-d');
-
-foreach ($urls as $url) {
+foreach ($urlsWithPriority as $url => $priority) {
     $xml .= '  <url>' . PHP_EOL;
     $xml .= '    <loc>' . htmlspecialchars($url, ENT_XML1, 'UTF-8') . '</loc>' . PHP_EOL;
-    $xml .= '    <lastmod>' . $today . '</lastmod>' . PHP_EOL;
+    $xml .= '    <lastmod>' . $timestamp . '</lastmod>' . PHP_EOL;
+    $xml .= '    <priority>' . $priority . '</priority>' . PHP_EOL;
     $xml .= '  </url>' . PHP_EOL;
 }
 
@@ -103,7 +141,9 @@ if (file_put_contents($sitemapPath, $xml) !== false) {
     
     $urlCount = count($sxe->url);
     echo "✅ XML validation: PASSED ($urlCount URLs)\n";
-    echo "✅ Structure: STRICT (only loc and lastmod)\n";
+    echo "✅ Includes homepage: YES\n";
+    echo "✅ Includes priorities: YES\n";
+    echo "✅ Includes ISO timestamps: YES\n";
     echo "\n🎉 Sitemap generation complete!\n";
 } else {
     echo "❌ Failed to write sitemap.xml\n";
