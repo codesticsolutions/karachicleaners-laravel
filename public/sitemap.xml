@@ -1,43 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://karachicleaners.com/</loc>
+    <lastmod>2026-03-11T18:36:27+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
     <loc>https://karachicleaners.com/about</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-11T18:36:27+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://karachicleaners.com/blog</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-11T18:36:27+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://karachicleaners.com/contact</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-11T18:36:27+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://karachicleaners.com/gallery</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-11T18:36:27+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://karachicleaners.com/services</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-11T18:36:27+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://karachicleaners.com/services/carpet-cleaning</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-11T18:36:27+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://karachicleaners.com/services/curtain-cleaning</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-11T18:36:27+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://karachicleaners.com/services/floor-tile-cleaning</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-11T18:36:27+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://karachicleaners.com/services/glass-cleaning</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-11T18:36:27+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://karachicleaners.com/services/sofa-cleaning</loc>
-    <lastmod>2026-03-11</lastmod>
+    <lastmod>2026-03-11T18:36:27+00:00</lastmod>
+    <priority>0.80</priority>
   </url>
 </urlset>
